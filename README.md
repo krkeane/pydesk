@@ -18,10 +18,16 @@ make -n
 
 will display the commands to be executed, without actually executing.
 
+Alternatively, instead of building the _pydesk_ image, you can also pull the image from [docker.io](https://cloud.docker.com/app/krkeane/repository/docker/krkeane/pydesk/general)
+
+`
+docker pull krkeane/pydesk:latest
+`
+
 To launch the pydesk container, 
 
 `
-docker run --privileged -p nnnn:5901 -v /sys/fs/cgroup:/sys/fs/cgroup:ro -d pydesk
+docker run --privileged -p nnnn:5901 -v /sys/fs/cgroup:/sys/fs/cgroup:ro -d [ pydesk | krkeane/pydesk ]
 `
 
 where _nnnn_ is an available port number on the docker host, for example 5901 would work if no one else is using it.
