@@ -27,10 +27,16 @@ docker pull krkeane/pydesk:latest
 To launch the pydesk container, 
 
 `
-docker run --privileged -p nnnn:5901 -v /sys/fs/cgroup:/sys/fs/cgroup:ro -d [ pydesk | krkeane/pydesk ]
+docker run --privileged -p nnnn:5901 -v /sys/fs/cgroup:/sys/fs/cgroup:ro -d pydesk
 `
 
-where _nnnn_ is an available port number on the docker host, for example 5901 would work if no one else is using it.
+for the image you built or
+
+`
+docker run --privileged -p nnnn:5901 -v /sys/fs/cgroup:/sys/fs/cgroup:ro -d krkeane/pydesk 
+`
+
+for the image you pulled. In both cases, _nnnn_ is an available port number on the docker host, for example 5901 would work if no one else is using it.
 
 
 You may access your pydesk container using a VNC viewer.  
